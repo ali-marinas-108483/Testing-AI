@@ -1,0 +1,11 @@
+description: "Model-graded – factuality"
+providers:
+  - openai:gpt-4o-mini
+
+prompts:
+  - "What is the capital of California?"
+
+tests:
+  - assert:
+      - type: factuality
+        value: "Sacramento is the capital of California."

@@ -1,0 +1,11 @@
+description: "Model-graded – llm-rubric (tweet under 50 words)"
+providers:
+  - openai:gpt-4o-mini
+
+prompts:
+  - "Write a tweet announcing our new AI product."
+
+tests:
+  - assert:
+      - type: llm-rubric
+        value: "Response is enthusiastic and under 50 words."

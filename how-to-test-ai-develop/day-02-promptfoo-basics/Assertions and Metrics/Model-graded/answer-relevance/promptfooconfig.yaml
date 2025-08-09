@@ -1,0 +1,11 @@
+description: "Model-graded – answer-relevance"
+providers:
+  - openai:gpt-4o
+
+prompts:
+  - "Explain the process of photosynthesis in simple terms."
+
+tests:
+  - assert:
+      - type: answer-relevance
+        threshold: 0.8          # require strong topical relevance

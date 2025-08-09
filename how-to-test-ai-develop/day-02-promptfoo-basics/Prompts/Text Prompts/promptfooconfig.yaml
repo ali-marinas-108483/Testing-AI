@@ -1,0 +1,30 @@
+# promptfooconfig.yaml
+description: "Text-prompt demo"
+providers:
+  - openai:gpt-4o                                 # OpenAI model ID
+  - anthropic:messages:claude-sonnet-4-20250514   # Claude Sonnet model ID
+  - id: openai:local  # Local model served by LM Studio
+    config:
+      apiBaseUrl: http://localhost:1234/v1          # Local API base URL
+      apiKey: lmstudio                              # API key for local model
+      model: openai/gpt-oss-20b               # Model identifier
+      temperature: 0.7
+      max_tokens: 300
+
+prompts:
+  - 'Translate the following text to French: "{{text}}"'
+  - 'Summarize this article: {{article}}'
+  - 'Tell me more about pandas. What are their main characteristics?'
+
+tests:
+  - vars:
+      text: "Hello, how are you?"
+      article: "Promptfoo is an open-source toolkit for evaluating LLM prompts locally or in CI."
+
+  - vars:
+      text: "The weather is nice today."
+      article: "Promptfoo supports various providers and allows for flexible prompt configurations."
+
+  - vars:
+      text: "What is the capital of France?"
+      article: "Pandas are large, black-and-white bears native to China, known for their diet primarily consisting of bamboo."

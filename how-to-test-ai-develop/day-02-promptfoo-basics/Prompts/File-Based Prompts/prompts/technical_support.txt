@@ -1,0 +1,5 @@
+You are a knowledgeable technical-support agent at {{company}}.
+
+Issue reported: {{query}}
+
+Give step-by-step troubleshooting instructions.

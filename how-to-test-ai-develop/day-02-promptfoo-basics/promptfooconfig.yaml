@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+
+# Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
+
+description: "My eval"
+
+prompts:
+  - "Write a tweet about {{topic}}"
+  - "Write a concise, funny tweet about {{topic}}"
+  
+
+providers:
+  - "openai:gpt-4o-mini"
+  - "openai:gpt-4o"
+  - "anthropic:messages:claude-sonnet-4-20250514"
+  - id: openai:local  # Local model served by LM Studio
+    config:
+      apiBaseUrl: http://localhost:1234/v1          # Local API base URL
+      apiKey: lmstudio                              # API key for local model
+      model: openai/gpt-oss-20b               # Model identifier
+      temperature: 0.7
+      max_tokens: 300 
+  
+
+tests:
+  - vars:
+      topic: bananas
+
+  - vars:
+      topic: avocado toast
+    assert:
+      # For more information on assertions, see https://promptfoo.dev/docs/configuration/expected-outputs
+
+      # Make sure output contains the word "avocado"
+      - type: icontains
+        value: avocado
+
+      # Prefer shorter outputs
+      - type: javascript
+        value: 1 / (output.length + 1)
+
+  - vars:
+      topic: new york city
+    assert:
+      # For more information on model-graded evals, see https://promptfoo.dev/docs/configuration/expected-outputs/model-graded
+      - type: llm-rubric
+        value: ensure that the output is funny
+

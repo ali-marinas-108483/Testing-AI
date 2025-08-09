@@ -1,0 +1,11 @@
+description: "Deterministic – contains"
+providers:
+  - openai:gpt-4o-mini
+
+prompts:
+  - "Greet the user in French."
+
+tests:
+  - assert:
+      - type: contains          # pass if substring present
+        value: "Bonjour"

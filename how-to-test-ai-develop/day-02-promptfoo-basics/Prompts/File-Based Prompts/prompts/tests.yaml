@@ -1,0 +1,12 @@
+  - vars:
+      company: "Engenious University"
+      query: "What is your refund policy for cancelled courses?"
+
+  - vars:
+      company: "Tech Solutions Inc."
+      query: "How do I reset my password?"
+
+  - vars:
+      company: "Global Tech Corp."
+      query: "Can you provide details on your data privacy policy?"
+

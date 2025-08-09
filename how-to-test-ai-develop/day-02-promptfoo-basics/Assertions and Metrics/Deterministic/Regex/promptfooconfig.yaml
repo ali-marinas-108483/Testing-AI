@@ -1,0 +1,11 @@
+description: "Deterministic – regex"
+providers:
+  - openai:gpt-4o-mini
+
+prompts:
+  - "In which year was the Java language first released? Respond with the year only."
+
+tests:
+  - assert:
+      - type: regex             # must match 1995 exactly
+        value: "\\b1995\\b"

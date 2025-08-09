@@ -1,0 +1,22 @@
+# promptfooconfig.yaml
+description: "Variables prompt demo"
+providers:
+  - openai:gpt-4o                                 # OpenAI model ID
+  - anthropic:messages:claude-sonnet-4-20250514   # Claude Sonnet model ID
+
+prompts:
+  # {{name}}, {{company}}, and {{issue}} are plain variable placeholders.
+  # Promptfoo swaps them for the values supplied under `vars` in a test case.
+  - |
+    Hello {{name}}, welcome to {{company}}!
+    Your request: {{issue}}
+
+tests:
+  - vars:
+      name: "Vladimir"
+      company: "Engenious University"
+      issue: "I need to reset my password."
+  - vars:
+      name: "Igor"
+      company: "Engenious University"
+      issue: "I need to change my account name."

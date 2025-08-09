@@ -1,0 +1,906 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>File-based prompt demo</title>
+    <style>
+      body {
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          Segoe UI,
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        word-break: break-all;
+      }
+      th,
+      td {
+        padding: 5px;
+        min-width: 200px;
+        white-space: pre-line;
+        vertical-align: top;
+      }
+
+      tr > td[data-content^='[PASS]'] {
+        color: green;
+      }
+      tr > td[data-content^='[FAIL]'] {
+        color: #ad0000;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        
+        <th>company</th>
+        
+        <th>query</th>
+        
+        <th>[openai:gpt-5] prompts/customer_service.txt: You are a friendly customer service representative for {{company}}.
+
+Customer query: {{query}}
+
+Please provide a helpful and professional response.</th>
+        
+        <th>[openai:gpt-5] prompts/technical_support.txt: You are a knowledgeable technical-support agent at {{company}}.
+
+Issue reported: {{query}}
+
+Give step-by-step troubleshooting instructions.</th>
+        
+        <th>[anthropic:messages:claude-sonnet-4-20250514] prompts/customer_service.txt: You are a friendly customer service representative for {{company}}.
+
+Customer query: {{query}}
+
+Please provide a helpful and professional response.</th>
+        
+        <th>[anthropic:messages:claude-sonnet-4-20250514] prompts/technical_support.txt: You are a knowledgeable technical-support agent at {{company}}.
+
+Issue reported: {{query}}
+
+Give step-by-step troubleshooting instructions.</th>
+        
+        <th>[openai:local] prompts/customer_service.txt: You are a friendly customer service representative for {{company}}.
+
+Customer query: {{query}}
+
+Please provide a helpful and professional response.</th>
+        
+        <th>[openai:local] prompts/technical_support.txt: You are a knowledgeable technical-support agent at {{company}}.
+
+Issue reported: {{query}}
+
+Give step-by-step troubleshooting instructions.</th>
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          <td data-content="Engenious University">Engenious University</td>
+          
+          <td data-content="What is your refund policy for cancelled courses?">What is your refund policy for cancelled courses?</td>
+          
+          <td data-content="[PASS] (1.00)
+
+
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Hello! Thank you for reaching out to Engenious University regarding our refund policy for cancelled courses.
+
+I&#39;d be happy to help clarify our refund policy for you:
+
+**When Engenious University cancels a course:**
+- Students receive a full 100% refund of tuition and fees paid for that specific course
+- Refunds are typically processed within 7-10 business days
+- You&#39;ll receive your refund via the same payment method used for the original transaction
+
+**When students withdraw from a course:**
+- Refund eligibility depends on when you withdraw relative to the course start date
+- We follow a tiered refund schedule (specific percentages vary by program type)
+- Administrative fees may apply in some cases
+
+**Next Steps:**
+To ensure I provide you with the most accurate information for your specific situation, could you please let me know:
+- Are you asking about a course that the university cancelled, or one you&#39;re considering withdrawing from?
+- What type of program/course are you enrolled in?
+
+I&#39;m here to help make this process as smooth as possible for you. If you have any other questions or need assistance with processing a refund, please don&#39;t hesitate to ask!
+
+Best regards,
+Customer Service Team
+Engenious University
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Hello! Thank you for reaching out to Engenious University regarding our refund policy for cancelled courses.
+
+I&#39;d be happy to help clarify our refund policy for you:
+
+**When Engenious University cancels a course:**
+- Students receive a full 100% refund of tuition and fees paid for that specific course
+- Refunds are typically processed within 7-10 business days
+- You&#39;ll receive your refund via the same payment method used for the original transaction
+
+**When students withdraw from a course:**
+- Refund eligibility depends on when you withdraw relative to the course start date
+- We follow a tiered refund schedule (specific percentages vary by program type)
+- Administrative fees may apply in some cases
+
+**Next Steps:**
+To ensure I provide you with the most accurate information for your specific situation, could you please let me know:
+- Are you asking about a course that the university cancelled, or one you&#39;re considering withdrawing from?
+- What type of program/course are you enrolled in?
+
+I&#39;m here to help make this process as smooth as possible for you. If you have any other questions or need assistance with processing a refund, please don&#39;t hesitate to ask!
+
+Best regards,
+Customer Service Team
+Engenious University
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+   Thank you for contacting Engenious University technical support regarding our refund policy for cancelled courses. I&#39;ll walk you through the step-by-step process to understand and navigate our refund procedures.
+
+## Step-by-Step Refund Process Guide
+
+### Step 1: Determine Who Cancelled the Course
+- **If the University cancelled the course:** You are entitled to a full 100% refund
+- **If you cancelled your enrollment:** Refund amount depends on timing (see Step 2)
+
+### Step 2: Check Your Cancellation Timeline
+1. Log into your student portal
+2. Navigate to &quot;My Courses&quot; → &quot;Registration History&quot;
+3. Find the cancelled course and note the cancellation date
+4. Compare against these refund schedules:
+
+**Standard Refund Schedule:**
+- Before course start date: 100% refund
+- Within first week: 90% refund
+- Week 2: 75% refund
+- Week 3: 50% refund
+- Week 4: 25% refund
+- After week 4: No refund
+
+### Step 3: Locate Your Refund Request Form
+1. Go to Student Portal → &quot;Financial Services&quot;
+2. Click &quot;Refund Requests&quot;
+3. Select &quot;Course Cancellation Refund&quot;
+4. Fill out required information including:
+- Course code and name
+- Reason for cancellation
+- Original payment method
+
+### Step 4: Submit Supporting Documentation
+Upload any required documents:
+- Medical documentation (if applicable)
+- Military deployment orders (if applicable)
+- Other extenuating circumstances documentation
+
+### Step 5: Track Your Request
+- Refund requests are processed within 5-10 business days
+- Check status in &quot;My Refund Requests&quot; section
+- You&#39;ll receive email confirmation when processed
+
+### Step 6: Verify Refund Receipt
+- Refunds return to original payment method
+- Credit cards: 3-5 business days
+- Bank transfers: 5-7 business days
+- Financial aid: Applied to next semester
+
+**Need additional help?** Contact our Financial Services office at (555) 123-4567 or email refunds@engeniousuniversity.edu
+
+Is there a specific aspect of the refund process you&#39;d like me to clarify further?
+
+   Pass Reason: No assertions">[PASS] (1.00)
+
+   Thank you for contacting Engenious University technical support regarding our refund policy for cancelled courses. I&#39;ll walk you through the step-by-step process to understand and navigate our refund procedures.
+
+## Step-by-Step Refund Process Guide
+
+### Step 1: Determine Who Cancelled the Course
+- **If the University cancelled the course:** You are entitled to a full 100% refund
+- **If you cancelled your enrollment:** Refund amount depends on timing (see Step 2)
+
+### Step 2: Check Your Cancellation Timeline
+1. Log into your student portal
+2. Navigate to &quot;My Courses&quot; → &quot;Registration History&quot;
+3. Find the cancelled course and note the cancellation date
+4. Compare against these refund schedules:
+
+**Standard Refund Schedule:**
+- Before course start date: 100% refund
+- Within first week: 90% refund
+- Week 2: 75% refund
+- Week 3: 50% refund
+- Week 4: 25% refund
+- After week 4: No refund
+
+### Step 3: Locate Your Refund Request Form
+1. Go to Student Portal → &quot;Financial Services&quot;
+2. Click &quot;Refund Requests&quot;
+3. Select &quot;Course Cancellation Refund&quot;
+4. Fill out required information including:
+- Course code and name
+- Reason for cancellation
+- Original payment method
+
+### Step 4: Submit Supporting Documentation
+Upload any required documents:
+- Medical documentation (if applicable)
+- Military deployment orders (if applicable)
+- Other extenuating circumstances documentation
+
+### Step 5: Track Your Request
+- Refund requests are processed within 5-10 business days
+- Check status in &quot;My Refund Requests&quot; section
+- You&#39;ll receive email confirmation when processed
+
+### Step 6: Verify Refund Receipt
+- Refunds return to original payment method
+- Credit cards: 3-5 business days
+- Bank transfers: 5-7 business days
+- Financial aid: Applied to next semester
+
+**Need additional help?** Contact our Financial Services office at (555) 123-4567 or email refunds@engeniousuniversity.edu
+
+Is there a specific aspect of the refund process you&#39;d like me to clarify further?
+
+   Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+We need to answer politely, mention refund policy. Provide details.Hello! 👋  
+Thank you for reaching out about our course cancellation refunds. Here’s what you need to know:
+
+| Course Type | Cancellation Timing | Refund Amount |
+|-------------|---------------------|---------------|
+| **Self‑paced online courses** | Cancel before the first live session or within 7 days of enrollment (whichever comes first) | Full refund (100 %) |
+| **Live/Instructor‑led courses** | Cancel at least 14 calendar days prior to the start date | 75 % of the tuition paid |
+| **Intensive bootcamps / workshops** | Cancel at least 10 calendar days before the event starts | 50 % of the tuition paid |
+| **Specialized certifications (e.g., Engineering &amp; Tech tracks)** | Cancel up to 30 days before the start date | Full refund (100 %) |
+
+### How to Request a Refund
+1. **Submit a request** through our online portal: log in → “My Courses” → “Request Refund.”  
+2. **Provide details** such as course title, enrollment ID, and reason for cancellation.  
+3. Our finance team will review your request within **5–7 business days** and email you confirmation.
+
+### Important Notes
+- If you have already accessed any course material or completed part of a live session, the refund may be reduced in accordance
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+We need to answer politely, mention refund policy. Provide details.Hello! 👋  
+Thank you for reaching out about our course cancellation refunds. Here’s what you need to know:
+
+| Course Type | Cancellation Timing | Refund Amount |
+|-------------|---------------------|---------------|
+| **Self‑paced online courses** | Cancel before the first live session or within 7 days of enrollment (whichever comes first) | Full refund (100 %) |
+| **Live/Instructor‑led courses** | Cancel at least 14 calendar days prior to the start date | 75 % of the tuition paid |
+| **Intensive bootcamps / workshops** | Cancel at least 10 calendar days before the event starts | 50 % of the tuition paid |
+| **Specialized certifications (e.g., Engineering &amp; Tech tracks)** | Cancel up to 30 days before the start date | Full refund (100 %) |
+
+### How to Request a Refund
+1. **Submit a request** through our online portal: log in → “My Courses” → “Request Refund.”  
+2. **Provide details** such as course title, enrollment ID, and reason for cancellation.  
+3. Our finance team will review your request within **5–7 business days** and email you confirmation.
+
+### Important Notes
+- If you have already accessed any course material or completed part of a live session, the refund may be reduced in accordance
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+   Need answer with steps.**Engenious University – Refund Policy &amp; Step‑by‑Step Guide**
+
+---
+
+## 1️⃣  Overview of the Refund Policy  
+| Course Status | Eligible for Full Refund | Eligible for Partial Refund | No Refund |
+|---------------|--------------------------|-----------------------------|-----------|
+| **Course cancelled by Engenious (e.g., low enrollment, instructor issue)** | ✔️ 100% refund within 14 days of cancellation notice | – | – |
+| **Student cancels before the course starts** | ✔️ 100% refund if request is made ≥ 7 days prior to start date | – | – |
+| **Cancellation after the course has started** | – | ❌ No refund (unless extraordinary circumstances, see below) | – |
+
+&gt; **Extra‑ordinary circumstances** (e.g., medical emergency, natural disaster):  
+&gt; • Submit a written request with documentation.  
+&gt; • Engenious will review and may grant a partial or full refund at its discretion.
+
+---
+
+## 2️⃣  Step‑by‑Step Troubleshooting &amp; Refund Request Process
+
+### A. **Confirm Course Cancellation Status**
+
+1. **Log in** to your student portal (https://portal.enguniv.edu).  
+2. Navigate to **My Courses → Enrolled Courses**.  
+3. Check the status icon:
+* 🔴 “Cancelled by Engenious”
+*
+
+   Pass Reason: No assertions">[PASS] (1.00)
+
+   Need answer with steps.**Engenious University – Refund Policy &amp; Step‑by‑Step Guide**
+
+---
+
+## 1️⃣  Overview of the Refund Policy  
+| Course Status | Eligible for Full Refund | Eligible for Partial Refund | No Refund |
+|---------------|--------------------------|-----------------------------|-----------|
+| **Course cancelled by Engenious (e.g., low enrollment, instructor issue)** | ✔️ 100% refund within 14 days of cancellation notice | – | – |
+| **Student cancels before the course starts** | ✔️ 100% refund if request is made ≥ 7 days prior to start date | – | – |
+| **Cancellation after the course has started** | – | ❌ No refund (unless extraordinary circumstances, see below) | – |
+
+&gt; **Extra‑ordinary circumstances** (e.g., medical emergency, natural disaster):  
+&gt; • Submit a written request with documentation.  
+&gt; • Engenious will review and may grant a partial or full refund at its discretion.
+
+---
+
+## 2️⃣  Step‑by‑Step Troubleshooting &amp; Refund Request Process
+
+### A. **Confirm Course Cancellation Status**
+
+1. **Log in** to your student portal (https://portal.enguniv.edu).  
+2. Navigate to **My Courses → Enrolled Courses**.  
+3. Check the status icon:
+* 🔴 “Cancelled by Engenious”
+*
+
+   Pass Reason: No assertions</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Tech Solutions Inc.">Tech Solutions Inc.</td>
+          
+          <td data-content="How do I reset my password?">How do I reset my password?</td>
+          
+          <td data-content="[PASS] (1.00)
+
+
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Hello! I&#39;d be happy to help you reset your password. Here are the steps to get you back into your account:
+
+**Online Password Reset:**
+1. Go to our login page at [company website]
+2. Click on &quot;Forgot Password?&quot; below the login fields
+3. Enter the email address associated with your account
+4. Check your email for a password reset link (it should arrive within a few minutes)
+5. Click the link in the email and follow the prompts to create a new password
+
+**Password Requirements:**
+- At least 8 characters long
+- Include both uppercase and lowercase letters
+- Contains at least one number
+- Includes at least one special character
+
+**If you don&#39;t receive the reset email:**
+- Check your spam/junk folder
+- Verify you&#39;re using the correct email address
+- Wait up to 10 minutes, as there may be a slight delay
+
+**Need Additional Help?**
+If you continue to experience issues or don&#39;t have access to your registered email, please don&#39;t hesitate to contact me directly. I can assist you with alternative verification methods.
+
+Is there anything specific about the password reset process you&#39;d like me to clarify?
+
+Best regards,
+Tech Solutions Inc. Customer Service Team
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Hello! I&#39;d be happy to help you reset your password. Here are the steps to get you back into your account:
+
+**Online Password Reset:**
+1. Go to our login page at [company website]
+2. Click on &quot;Forgot Password?&quot; below the login fields
+3. Enter the email address associated with your account
+4. Check your email for a password reset link (it should arrive within a few minutes)
+5. Click the link in the email and follow the prompts to create a new password
+
+**Password Requirements:**
+- At least 8 characters long
+- Include both uppercase and lowercase letters
+- Contains at least one number
+- Includes at least one special character
+
+**If you don&#39;t receive the reset email:**
+- Check your spam/junk folder
+- Verify you&#39;re using the correct email address
+- Wait up to 10 minutes, as there may be a slight delay
+
+**Need Additional Help?**
+If you continue to experience issues or don&#39;t have access to your registered email, please don&#39;t hesitate to contact me directly. I can assist you with alternative verification methods.
+
+Is there anything specific about the password reset process you&#39;d like me to clarify?
+
+Best regards,
+Tech Solutions Inc. Customer Service Team
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+   Hello! I&#39;ll help you reset your password. Here are the step-by-step instructions:
+
+## Password Reset Instructions
+
+### Method 1: Self-Service Password Reset (Recommended)
+
+1. **Go to the login page**
+- Navigate to your account login page
+- Look for &quot;Forgot Password?&quot; or &quot;Reset Password&quot; link (usually below the login fields)
+
+2. **Enter your information**
+- Click the &quot;Forgot Password?&quot; link
+- Enter your registered email address or username
+- Complete any security verification (CAPTCHA) if prompted
+
+3. **Check your email**
+- Look for a password reset email (check spam/junk folders too)
+- The email should arrive within 5-10 minutes
+
+4. **Follow the reset link**
+- Click the reset link in the email
+- **Note:** This link typically expires in 24 hours
+
+5. **Create your new password**
+- Enter a strong new password
+- Confirm the password by typing it again
+- Click &quot;Save&quot; or &quot;Update Password&quot;
+
+### Method 2: Contact Support (If self-service doesn&#39;t work)
+
+If you encounter issues with the above steps:
+
+1. **Gather your information**
+- Account username or email
+- Last known password (if remembered)
+- Any error messages you&#39;re seeing
+
+2. **Contact our support team**
+- Call: [Support phone number]
+- Email: [Support email]
+- Live chat: Available on our website
+
+### Password Requirements
+- Minimum 8 characters
+- Include uppercase and lowercase letters
+- Include at least one number
+- Include at least one special character (!@#$%^&amp;*)
+
+**Need immediate assistance?** Please let me know what specific step you&#39;re having trouble with, and I&#39;ll provide more detailed guidance!
+
+   Pass Reason: No assertions">[PASS] (1.00)
+
+   Hello! I&#39;ll help you reset your password. Here are the step-by-step instructions:
+
+## Password Reset Instructions
+
+### Method 1: Self-Service Password Reset (Recommended)
+
+1. **Go to the login page**
+- Navigate to your account login page
+- Look for &quot;Forgot Password?&quot; or &quot;Reset Password&quot; link (usually below the login fields)
+
+2. **Enter your information**
+- Click the &quot;Forgot Password?&quot; link
+- Enter your registered email address or username
+- Complete any security verification (CAPTCHA) if prompted
+
+3. **Check your email**
+- Look for a password reset email (check spam/junk folders too)
+- The email should arrive within 5-10 minutes
+
+4. **Follow the reset link**
+- Click the reset link in the email
+- **Note:** This link typically expires in 24 hours
+
+5. **Create your new password**
+- Enter a strong new password
+- Confirm the password by typing it again
+- Click &quot;Save&quot; or &quot;Update Password&quot;
+
+### Method 2: Contact Support (If self-service doesn&#39;t work)
+
+If you encounter issues with the above steps:
+
+1. **Gather your information**
+- Account username or email
+- Last known password (if remembered)
+- Any error messages you&#39;re seeing
+
+2. **Contact our support team**
+- Call: [Support phone number]
+- Email: [Support email]
+- Live chat: Available on our website
+
+### Password Requirements
+- Minimum 8 characters
+- Include uppercase and lowercase letters
+- Include at least one number
+- Include at least one special character (!@#$%^&amp;*)
+
+**Need immediate assistance?** Please let me know what specific step you&#39;re having trouble with, and I&#39;ll provide more detailed guidance!
+
+   Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Need to respond politely.Hi there! 🌟  
+I’m happy to help you reset your Tech Solutions account password.
+
+### Quick 3‑step guide
+
+| Step | Action | Tips |
+|------|--------|------|
+| **1** | Go to the login page and click **“Forgot Password?”** | You’ll find this link just below the sign‑in fields. |
+| **2** | Enter your registered email address and hit **Submit** | Make sure the email is typed correctly; we’ll send a reset link there. |
+| **3** | Check your inbox (and spam/junk folder) for an email from *support@techsolutions.com* titled “Password Reset Request.” Click the link inside. | The link is valid for 30 minutes. If it’s expired, simply repeat step 2. |
+
+### What happens next?
+
+- You’ll be taken to a secure page where you can enter a **new password** (min. 8 characters, mix of upper/lowercase, numbers, and symbols).  
+- Once submitted, you’ll receive a confirmation email.
+
+### Need more help?
+
+| Issue | Contact |
+|-------|---------|
+| Didn’t receive the reset email? | Reply to this message or call our support line at **1‑800‑TECH‑HELP**. We’ll verify your identity and send a fresh link. |
+| Forgot the answer to your security
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Need to respond politely.Hi there! 🌟  
+I’m happy to help you reset your Tech Solutions account password.
+
+### Quick 3‑step guide
+
+| Step | Action | Tips |
+|------|--------|------|
+| **1** | Go to the login page and click **“Forgot Password?”** | You’ll find this link just below the sign‑in fields. |
+| **2** | Enter your registered email address and hit **Submit** | Make sure the email is typed correctly; we’ll send a reset link there. |
+| **3** | Check your inbox (and spam/junk folder) for an email from *support@techsolutions.com* titled “Password Reset Request.” Click the link inside. | The link is valid for 30 minutes. If it’s expired, simply repeat step 2. |
+
+### What happens next?
+
+- You’ll be taken to a secure page where you can enter a **new password** (min. 8 characters, mix of upper/lowercase, numbers, and symbols).  
+- Once submitted, you’ll receive a confirmation email.
+
+### Need more help?
+
+| Issue | Contact |
+|-------|---------|
+| Didn’t receive the reset email? | Reply to this message or call our support line at **1‑800‑TECH‑HELP**. We’ll verify your identity and send a fresh link. |
+| Forgot the answer to your security
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Need to give steps.**Tech Solutions – Password Reset Guide**
+
+Below is a clear, step‑by‑step process for resetting your account password. Follow the instructions that match your device and environment (desktop web, mobile app, or corporate VPN). If you hit a snag at any point, let me know which step caused trouble and I’ll help troubleshoot further.
+
+---
+
+## 1️⃣ Desktop Web Browser
+
+| Step | Action | Notes |
+|------|--------|-------|
+| **1** | Open your browser (Chrome, Firefox, Edge, Safari) | Use the most recent version for best security. |
+| **2** | Go to the login page: `https://portal.techsolutions.com/login` | If you’re already logged in, click your profile icon → *Sign out*. |
+| **3** | Click “Forgot password?” or “Reset password” link | Usually located beneath the password field. |
+| **4** | Enter the email address associated with your account and submit | Make sure it’s the same one used for login. |
+| **5** | Check your inbox (and spam/junk folder) for an email from *noreply@techsolutions.com* | If you don’t see it within 5 min, click “Resend”. |
+| **6** | Open the email and click the password‑reset link | The link is time‑limited (valid for 30 
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Need to give steps.**Tech Solutions – Password Reset Guide**
+
+Below is a clear, step‑by‑step process for resetting your account password. Follow the instructions that match your device and environment (desktop web, mobile app, or corporate VPN). If you hit a snag at any point, let me know which step caused trouble and I’ll help troubleshoot further.
+
+---
+
+## 1️⃣ Desktop Web Browser
+
+| Step | Action | Notes |
+|------|--------|-------|
+| **1** | Open your browser (Chrome, Firefox, Edge, Safari) | Use the most recent version for best security. |
+| **2** | Go to the login page: `https://portal.techsolutions.com/login` | If you’re already logged in, click your profile icon → *Sign out*. |
+| **3** | Click “Forgot password?” or “Reset password” link | Usually located beneath the password field. |
+| **4** | Enter the email address associated with your account and submit | Make sure it’s the same one used for login. |
+| **5** | Check your inbox (and spam/junk folder) for an email from *noreply@techsolutions.com* | If you don’t see it within 5 min, click “Resend”. |
+| **6** | Open the email and click the password‑reset link | The link is time‑limited (valid for 30 
+
+Pass Reason: No assertions</td>
+          
+        </tr>
+        
+        <tr>
+          
+          <td data-content="Global Tech Corp.">Global Tech Corp.</td>
+          
+          <td data-content="Can you provide details on your data privacy policy?">Can you provide details on your data privacy policy?</td>
+          
+          <td data-content="[PASS] (1.00)
+
+
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Hello! Thank you for reaching out to Global Tech Corp. I&#39;m happy to help you with information about our data privacy policy.
+
+I appreciate your interest in understanding how we handle and protect your personal information. Data privacy is extremely important to us, and we&#39;re committed to maintaining the highest standards of data protection.
+
+For the most comprehensive and up-to-date details about our data privacy practices, I&#39;d recommend reviewing our complete Privacy Policy, which you can find:
+
+• On our website at www.globaltechcorp.com/privacy
+• In the footer of any page on our site
+• Through your account dashboard if you&#39;re a registered user
+
+Our privacy policy covers key areas including:
+- What information we collect and why
+- How we use and protect your data
+- Your rights regarding your personal information
+- How to contact us with privacy-related questions
+- Our data retention and deletion practices
+
+If you have specific questions after reviewing the policy, or if you&#39;d like assistance with any privacy-related requests (such as data access, correction, or deletion), please don&#39;t hesitate to reach out to our dedicated Privacy Team at privacy@globaltechcorp.com or call our privacy hotline.
+
+Is there a particular aspect of our data privacy practices you&#39;d like me to help you locate information about?
+
+Best regards,
+Global Tech Corp. Customer Service Team
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Hello! Thank you for reaching out to Global Tech Corp. I&#39;m happy to help you with information about our data privacy policy.
+
+I appreciate your interest in understanding how we handle and protect your personal information. Data privacy is extremely important to us, and we&#39;re committed to maintaining the highest standards of data protection.
+
+For the most comprehensive and up-to-date details about our data privacy practices, I&#39;d recommend reviewing our complete Privacy Policy, which you can find:
+
+• On our website at www.globaltechcorp.com/privacy
+• In the footer of any page on our site
+• Through your account dashboard if you&#39;re a registered user
+
+Our privacy policy covers key areas including:
+- What information we collect and why
+- How we use and protect your data
+- Your rights regarding your personal information
+- How to contact us with privacy-related questions
+- Our data retention and deletion practices
+
+If you have specific questions after reviewing the policy, or if you&#39;d like assistance with any privacy-related requests (such as data access, correction, or deletion), please don&#39;t hesitate to reach out to our dedicated Privacy Team at privacy@globaltechcorp.com or call our privacy hotline.
+
+Is there a particular aspect of our data privacy practices you&#39;d like me to help you locate information about?
+
+Best regards,
+Global Tech Corp. Customer Service Team
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Thank you for your inquiry about Global Tech Corp.&#39;s data privacy policy. I&#39;d be happy to help you access this important information. Here are step-by-step instructions to find our comprehensive privacy details:
+
+## Step-by-Step Instructions to Access Privacy Policy:
+
+### Step 1: Visit Our Official Website
+- Navigate to www.globaltechcorp.com
+- Ensure you&#39;re on the official site (check for the secure lock icon in your browser)
+
+### Step 2: Locate Privacy Information
+- Scroll to the bottom of any page on our website
+- Look for the &quot;Privacy Policy&quot; link in the footer section
+- Alternatively, check the main navigation menu under &quot;Legal&quot; or &quot;About Us&quot;
+
+### Step 3: Review Key Privacy Sections
+When you access the policy, focus on these important sections:
+- **Data Collection**: What information we gather
+- **Data Usage**: How we use your information
+- **Data Sharing**: When and with whom we share data
+- **Data Security**: How we protect your information
+- **Your Rights**: Options for controlling your data
+- **Contact Information**: How to reach our privacy team
+
+### Step 4: Access Additional Resources
+- Look for our &quot;Privacy Center&quot; or &quot;Data Protection&quot; page for more detailed information
+- Check for any recent privacy policy updates or notifications
+
+### Step 5: Contact Our Privacy Team (If Needed)
+If you have specific questions after reviewing the policy:
+- Email: privacy@globaltechcorp.com
+- Phone: 1-800-PRIVACY (1-800-774-8229)
+- Live chat available on our website during business hours
+
+**Note**: Our privacy policy is regularly updated to reflect current practices and regulations. Please check the &quot;Last Updated&quot; date when reviewing.
+
+Is there a specific aspect of our privacy practices you&#39;d like me to explain further?
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Thank you for your inquiry about Global Tech Corp.&#39;s data privacy policy. I&#39;d be happy to help you access this important information. Here are step-by-step instructions to find our comprehensive privacy details:
+
+## Step-by-Step Instructions to Access Privacy Policy:
+
+### Step 1: Visit Our Official Website
+- Navigate to www.globaltechcorp.com
+- Ensure you&#39;re on the official site (check for the secure lock icon in your browser)
+
+### Step 2: Locate Privacy Information
+- Scroll to the bottom of any page on our website
+- Look for the &quot;Privacy Policy&quot; link in the footer section
+- Alternatively, check the main navigation menu under &quot;Legal&quot; or &quot;About Us&quot;
+
+### Step 3: Review Key Privacy Sections
+When you access the policy, focus on these important sections:
+- **Data Collection**: What information we gather
+- **Data Usage**: How we use your information
+- **Data Sharing**: When and with whom we share data
+- **Data Security**: How we protect your information
+- **Your Rights**: Options for controlling your data
+- **Contact Information**: How to reach our privacy team
+
+### Step 4: Access Additional Resources
+- Look for our &quot;Privacy Center&quot; or &quot;Data Protection&quot; page for more detailed information
+- Check for any recent privacy policy updates or notifications
+
+### Step 5: Contact Our Privacy Team (If Needed)
+If you have specific questions after reviewing the policy:
+- Email: privacy@globaltechcorp.com
+- Phone: 1-800-PRIVACY (1-800-774-8229)
+- Live chat available on our website during business hours
+
+**Note**: Our privacy policy is regularly updated to reflect current practices and regulations. Please check the &quot;Last Updated&quot; date when reviewing.
+
+Is there a specific aspect of our privacy practices you&#39;d like me to explain further?
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Need to give polite response with summary of privacy policy and link.Hello!  
+Thank you for reaching out to Global Tech Corp. We take the protection of your personal information very seriously, and we’re happy to share an overview of our Data Privacy Policy.
+
+---
+
+## 📌 Key Points of Our Data Privacy Policy
+
+| Topic | What it means for you |
+|-------|----------------------|
+| **What data we collect** | • Personal info (name, email, phone) when you register or contact us. &lt;br&gt;• Usage data from our websites and apps (cookies, device ID). &lt;br&gt;• Payment details if you purchase products or services. |
+| **How we use your data** | • To provide and improve our services.&lt;br&gt;• To communicate about updates, offers, and support.&lt;br&gt;• For security monitoring and fraud prevention.&lt;br&gt;• If required by law (e.g., regulatory requests). |
+| **Who can see it** | • Our authorized team members who need the data to fulfill your request. &lt;br&gt;• Trusted third‑party partners (payment processors, email‑service providers) under strict confidentiality agreements.&lt;br&gt;• Regulatory authorities when legally obligated. |
+| **Your rights** | • Request access, correction, or deletion of your personal info. &lt;br&gt;• Opt‑out of marketing communications at any time. &lt;br&gt;• File a complaint with our Data Protection
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Need to give polite response with summary of privacy policy and link.Hello!  
+Thank you for reaching out to Global Tech Corp. We take the protection of your personal information very seriously, and we’re happy to share an overview of our Data Privacy Policy.
+
+---
+
+## 📌 Key Points of Our Data Privacy Policy
+
+| Topic | What it means for you |
+|-------|----------------------|
+| **What data we collect** | • Personal info (name, email, phone) when you register or contact us. &lt;br&gt;• Usage data from our websites and apps (cookies, device ID). &lt;br&gt;• Payment details if you purchase products or services. |
+| **How we use your data** | • To provide and improve our services.&lt;br&gt;• To communicate about updates, offers, and support.&lt;br&gt;• For security monitoring and fraud prevention.&lt;br&gt;• If required by law (e.g., regulatory requests). |
+| **Who can see it** | • Our authorized team members who need the data to fulfill your request. &lt;br&gt;• Trusted third‑party partners (payment processors, email‑service providers) under strict confidentiality agreements.&lt;br&gt;• Regulatory authorities when legally obligated. |
+| **Your rights** | • Request access, correction, or deletion of your personal info. &lt;br&gt;• Opt‑out of marketing communications at any time. &lt;br&gt;• File a complaint with our Data Protection
+
+Pass Reason: No assertions</td>
+          
+          <td data-content="[PASS] (1.00)
+
+Need to respond as support agent asking info and providing policy steps.**Hello!**  
+I’m happy to help you understand how Global Tech Corp. protects your personal information. Below you’ll find a quick overview of our data‑privacy commitments, followed by step‑by‑step instructions on how you can review or manage the data we hold about you.
+
+---
+
+## 1️⃣ Quick Overview – What We Do With Your Data
+
+| Category | Typical Data Collected | Purpose | Retention |
+|----------|------------------------|---------|-----------|
+| **Account Information** | Name, email address, phone number, profile picture | Create &amp; secure your account, personalize experience | Until you delete the account or close it for 30 days after deletion request |
+| **Usage &amp; Analytics** | Device type, OS, IP address, browsing behavior within our apps/websites, crash logs | Improve product performance, detect and fix bugs, enhance UX | 90 days (unless needed longer for legal compliance) |
+| **Transactional Data** | Purchase history, billing info, payment method tokens | Process orders, issue refunds, send order confirmations | As long as the transaction remains active + 6 months after closure |
+| **Support &amp; Feedback** | Ticket content, chat logs, screenshots | Resolve issues, improve support | Until ticket is archived + 1 year |
+| **Marketing &amp; Communications** | Email opens/clicks,
+
+Pass Reason: No assertions">[PASS] (1.00)
+
+Need to respond as support agent asking info and providing policy steps.**Hello!**  
+I’m happy to help you understand how Global Tech Corp. protects your personal information. Below you’ll find a quick overview of our data‑privacy commitments, followed by step‑by‑step instructions on how you can review or manage the data we hold about you.
+
+---
+
+## 1️⃣ Quick Overview – What We Do With Your Data
+
+| Category | Typical Data Collected | Purpose | Retention |
+|----------|------------------------|---------|-----------|
+| **Account Information** | Name, email address, phone number, profile picture | Create &amp; secure your account, personalize experience | Until you delete the account or close it for 30 days after deletion request |
+| **Usage &amp; Analytics** | Device type, OS, IP address, browsing behavior within our apps/websites, crash logs | Improve product performance, detect and fix bugs, enhance UX | 90 days (unless needed longer for legal compliance) |
+| **Transactional Data** | Purchase history, billing info, payment method tokens | Process orders, issue refunds, send order confirmations | As long as the transaction remains active + 6 months after closure |
+| **Support &amp; Feedback** | Ticket content, chat logs, screenshots | Resolve issues, improve support | Until ticket is archived + 1 year |
+| **Marketing &amp; Communications** | Email opens/clicks,
+
+Pass Reason: No assertions</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>

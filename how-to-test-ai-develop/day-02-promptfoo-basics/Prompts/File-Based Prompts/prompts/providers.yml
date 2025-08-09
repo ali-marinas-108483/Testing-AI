@@ -1,0 +1,16 @@
+  - id: openai:gpt-5
+    config:
+      verbosity: high # low | medium | high
+      max_completion_tokens: 200
+      reasoning_effort: minimal                               # OpenAI model ID
+  - id: anthropic:messages:claude-sonnet-4-20250514
+    config:
+      verbosity: high # low | medium | high
+      reasoning_effort: minimal                               # Claude Sonnet model ID
+  - id: openai:local
+    config:
+      apiBaseUrl: http://localhost:1234/v1
+      apiKey: lmstudio
+      model: openai/gpt-oss-20b
+      temperature: 0.7
+      max_tokens: 300
