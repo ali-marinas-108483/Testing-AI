@@ -1,18 +1,23 @@
 - vars:
-    assert:
-      - type: contains
-        value: "19.5"
-      - type: contains
-        value: "105"
-      - type: contains
-        value: "128"
-      - type: contains
-        value: "32"
-      - type: not-contains
-        value: "20"
-      - type: not-contains
-        value: "18"
-      - type: not-contains
-        value: "21"
-      - type: not-contains
-        value: "error"
+  assert:
+    - type: contains
+      value: "19.5"
+    - type: contains
+      value: "105"
+    - type: contains
+      value: "128"
+    - type: contains
+      value: "32"
+    - type: not-contains
+      value: "20"
+    - type: not-contains
+      value: "18"
+    - type: not-contains
+      value: "21"
+    - type: not-contains
+      value: "error"
+
+- vars:
+  assert:
+    - type: factuality
+      value: "The performance consistency test results show that the model's output is consistent across different runs, with a mean of 19.5, standard deviation of 1.5, and a range of 105 to 128."

@@ -3,3 +3,4 @@
 2025-08-14T01:28:15.086Z [ERROR]: Anthropic Messages API call error: 401 {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"}}
 2025-08-14T01:28:15.266Z [ERROR]: Anthropic Messages API call error: 401 {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"}}
 2025-08-14T01:28:15.772Z [ERROR]: Anthropic Messages API call error: 401 {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"}}
+2025-08-14T23:15:09.237Z [ERROR]: No test files found for path: bias-fairness/biasFairnessTest.yaml
