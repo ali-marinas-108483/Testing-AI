@@ -1,0 +1,24 @@
+description: Fundamentals of AI and its challenges
+
+providers:
+  - file://./providers.yaml 
+
+prompts:
+  - file://security/securityFactual.txt
+  - file://hallucination/hallucinationFactual.txt
+  - file://bias-fairness/biasFairnessFactual.txt
+  - file://context-limit/contextLimitFactual.txt
+  - file://performance-consistency/performanceConsistencyFactual.txt
+  - file://values-alignment/valuesAlignmentFactual.txt
+  - file://compliance/complianceFactual.txt
+
+
+
+tests:
+  - file://security/securityTest.yaml
+  - file://hallucination/hallucinationTest.yaml
+  - file://bias-fairness/biasFairnessTest.yaml
+  - file://context-limit/contextLimitTest.yaml
+  - file://performance-consistency/performanceConsistencyTest.yaml
+  - file://values-alignment/valuesAlignmentTest.yaml
+  - file://compliance/complianceTest.yaml

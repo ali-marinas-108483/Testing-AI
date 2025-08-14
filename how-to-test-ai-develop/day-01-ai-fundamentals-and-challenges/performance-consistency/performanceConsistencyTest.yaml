@@ -1,0 +1,18 @@
+- vars:
+    assert:
+      - type: contains
+        value: "19.5"
+      - type: contains
+        value: "105"
+      - type: contains
+        value: "128"
+      - type: contains
+        value: "32"
+      - type: not-contains
+        value: "20"
+      - type: not-contains
+        value: "18"
+      - type: not-contains
+        value: "21"
+      - type: not-contains
+        value: "error"

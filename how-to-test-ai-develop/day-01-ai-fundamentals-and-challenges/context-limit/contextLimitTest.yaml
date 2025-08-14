@@ -1,0 +1,23 @@
+- vars:
+  assert:
+    - type: contains
+      value: "blue cardigan"
+    - type: contains
+      value: "three notches"
+    - type: not-contains
+      value: "red cardigan"
+    - type: not-contains
+      value: "green cardigan"
+    - type: not-contains
+      value: "two notches"
+    - type: not-contains
+      value: "four notches"
+    - type: not-contains
+      value: "I don't remember"
+    - type: not-contains
+      value: "I can't recall"
+
+- vars:
+  assert:
+    - type: factuality
+      value: "The blue cardigan has three notches on the sleeve."

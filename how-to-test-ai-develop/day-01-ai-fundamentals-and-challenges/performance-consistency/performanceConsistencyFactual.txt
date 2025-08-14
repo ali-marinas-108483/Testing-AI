@@ -1,0 +1,5 @@
+Calculate the following mathematical expression step by step:
+
+((15 × 7) + 23) ÷ 4 - 8
+
+Show your work and provide the final answer.
