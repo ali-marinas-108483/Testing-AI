@@ -1,0 +1,23 @@
+# 2) Factual single-answer QA: correctness + brevity
+description: "Check that the capital is correct ('Sacramento'), on-topic, and returned as a short answer."
+providers:
+  - openai:gpt-4o-mini
+
+prompts:
+  - "What is the capital of California?"
+
+tests:
+  - threshold: 0.8
+    assert:
+      - type: factuality
+        value: "Sacramento is the capital of California."
+        weight: 3
+        metric: Accuracy
+      - type: icontains
+        value: "Sacramento"
+        weight: 1
+        metric: Accuracy
+      - type: llm-rubric
+        value: "Answer only the city name (no extra sentences)."
+        weight: 1
+        metric: Conciseness

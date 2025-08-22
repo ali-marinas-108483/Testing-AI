@@ -1,0 +1,35 @@
+# 4) EN→FR translation: exactness + naturalness + performance
+description: "Translate to French with priority on exactness; accept a close variant; ensure fluent output and keep within cost/latency."
+providers:
+  - id: openai:gpt-4.1
+    config:
+      temperature: 0.2
+      max_tokens: 60
+
+prompts:
+  - "Translate the following text to French: \"{{text}}\""
+
+tests:
+  - vars:
+      text: "Hello, how are you?"
+    threshold: 0.6
+    assert:
+      - type: equals
+        value: "Bonjour, comment vas-tu ?"
+        weight: 2
+        metric: Accuracy
+      - type: similar
+        value: "Bonjour, comment ça va ?"
+        weight: 1
+        metric: Accuracy
+      - type: llm-rubric
+        value: "Fluent, natural French with correct punctuation."
+        weight: 1
+        metric: Fluency
+      - type: assert-set
+        metric: Performance
+        assert:
+          - type: cost
+            threshold: 0.001
+          - type: latency
+            threshold: 200
